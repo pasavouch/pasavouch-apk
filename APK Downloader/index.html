@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="tl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Pasavouch APK Downloader</title>
+
+  <!-- Fonts and Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+      height: 100%;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f2f2f2;
+      overflow: hidden;
+    }
+
+    .container {
+      width: 100%;
+      height: 100vh;
+      max-width: 480px;
+      margin: auto;
+      background-color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 20px 16px;
+      overflow-y: auto;
+    }
+
+    h1 {
+      font-size: 17px;
+      text-align: center;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+    }
+
+    .notice {
+      background-color: #e9f5ff;
+      border-left: 4px solid #2196f3;
+      padding: 12px 14px;
+      font-size: 13px;
+      margin-bottom: 20px;
+      border-radius: 6px;
+      color: #333;
+      text-align: justify;
+    }
+
+    .faq-section {
+      width: 100%;
+      margin-bottom: 16px;
+    }
+
+    .faq-section h2 {
+      font-size: 14px;
+      color: #007bff;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .faq {
+      background: #f9f9f9;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin-bottom: 8px;
+      overflow: hidden;
+    }
+
+    .faq-header {
+      padding: 10px 14px;
+      font-weight: 600;
+      font-size: 13px;
+      cursor: pointer;
+      color: #000;
+      position: relative;
+    }
+
+    .faq-header::after {
+      content: '\f078';
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: transform 0.2s ease;
+      font-size: 11px;
+    }
+
+    .faq.active .faq-header::after {
+      transform: translateY(-50%) rotate(180deg);
+    }
+
+    .faq-body {
+      padding: 0 14px 10px;
+      display: none;
+      color: #444;
+      font-size: 13px;
+    }
+
+    .faq.active .faq-body {
+      display: block;
+    }
+
+    ul {
+      list-style: none;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      padding: 0;
+    }
+
+    li {
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 18px 14px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .latest {
+      font-size: 12px;
+      font-weight: bold;
+      color: #e63946;
+      margin-bottom: 4px;
+      text-transform: uppercase;
+    }
+
+    .version {
+      font-family: 'Roboto Mono', monospace;
+      font-size: 13px;
+      color: #007bff;
+      margin-bottom: 14px;
+    }
+
+    .download-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      max-width: 280px;
+      padding: 10px 0;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+      cursor: pointer;
+    }
+
+    .download-btn i {
+      margin-right: 8px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        border-radius: 0;
+        padding: 18px 12px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Pasavouch APK Downloader</h1>
+
+    <!-- How to Download Instructions -->
+    <div class="notice">
+      <h2>How to Download</h2><br>
+      <p>1. I-click ang <strong>Download</strong> button sa ibaba.</p><br>
+      <p>2. Hintayin na matapos ang pag-download ng file.</p><br>
+      <p>3. Kapag na-download na, buksan ito mula sa iyong downloads folder.</p><br>
+      <p>4. Kung may warning, i-enable ang <strong>"Install unknown apps"</strong> sa settings.</p><br>
+      <p>5. Tapusin ang pag-install, at buksan ang app!</p>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="faq-section">
+      <h2>FAQs</h2>
+
+      <div class="faq">
+        <div class="faq-header">Latest version na ang app pero Out of date parin?</div>
+        <div class="faq-body">
+          I-uninstall muna ang lumang version ng app, pagkatapos ay i-download at i-install ang latest version upang ma-reset.
+        </div>
+      </div>
+
+      <div class="faq">
+        <div class="faq-header">Paano i-reset ang app?</div>
+        <div class="faq-body">
+          Pumunta sa app settings, tapos i-clear ang cache at data. Pagkatapos, i-reopen ang app.
+        </div>
+      </div>
+
+      <div class="faq">
+        <div class="faq-header">Safe ba ang app?</div>
+        <div class="faq-body">
+          Yes! Pasavouch application is safe and your personal information is secured.
+        </div>
+      </div>
+    </div>
+
+    <!-- Download Button -->
+    <ul>
+      <li>
+        <div class="latest">Latest</div>
+        <div class="version">App Version 2.0.4 (New)</div>
+        <a class="download-btn" href="pasavouch-v2.0.4.apk" download>
+          <i class="fas fa-download"></i> Download
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const faqs = document.querySelectorAll('.faq');
+      faqs.forEach(faq => {
+        const header = faq.querySelector('.faq-header');
+        header.addEventListener('click', () => {
+          faq.classList.toggle('active');
+        });
+      });
+    });
+
+    document.addEventListener("wheel", e => {
+      if (e.ctrlKey) e.preventDefault();
+    }, { passive: false });
+
+    document.addEventListener("gesturestart", e => e.preventDefault());
+  </script>
+</body>
+</html>
